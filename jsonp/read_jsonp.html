@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      let message = (data) => {
+        console.log(data[1].title);
+      };
+      //callback 方法 使用时被corb阻塞
+//      let showData = (result) => {
+//        console.log('result',result)
+//      }
+//      let url = "http://127.0.0.1:1111/api/user?callback=showData"
+//      let script = document.createElement('script');
+//      script.setAttribute('src', url);
+//      document.getElementsByTagName('head')[0].appendChild(script);
+
+        // jquery方法  使用时被corb阻塞
+//      $(document).ready(function() {
+//        let htmlobj=$.ajax({url:"http://127.0.0.1:1111/api/user",jsonp:"callback",jsonCallback:"success",dataType:"jsonp",success:function(data){console.log(data)}});
+//      });
+    </script>
+
+    <script type="text/javascript" src="http://127.0.0.1:1111/message.js"></script>
+    <!--
+        上述src中，可为php文件，如src="http://xxx.xxx.xx/data.php?callback=dosomething&canshu=1"
+        php返回格式为json，echo $_GET['callback'].'('.json_encode($data).')'
+    -->
+</head>
+<body>
+<div id='testdiv'>111</div>
+</body>
+</html>

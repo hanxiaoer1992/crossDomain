@@ -1,0 +1,19 @@
+{
+  "name": "crossdomain",
+  "version": "1.0.0",
+  "description": "跨域 由于浏览器对js的同源策略（协议、域名、端口相同）的限制导致跨域",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd server && node server.js",
+    "vue": "cd vue_proxy && yarn && yarn start",
+    "vueopen": "cd vue_proxy && yarn start"
+  },
+  "author": "wangyanan",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-cli": "^2.9.6",
+    "webpack": "^4.16.3"
+  }
+}

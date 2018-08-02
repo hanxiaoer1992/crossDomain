@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORS</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+  $(document).ready(function(){
+    let htmlobj=$.ajax({url:"http://localhost:1111/cors",async:false});
+    console.log(htmlobj.responseText)
+  });
+</script>
+</body>
+</html>

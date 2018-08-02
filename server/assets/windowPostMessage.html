@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.postMessage page b</title>
+    <script>
+//        function onLoad() {
+//          let iframe = document.getElementById('postdata');
+//          let win = iframe.contentWindow;
+//          win.postMessage('it can be json form');
+//        }
+        window.onmessage = function (e) {
+          e = e || event
+          console.log(e.data)
+        }
+    </script>
+</head>
+<body>
+    <p id="postdata"></p>
+</body>
+</html>

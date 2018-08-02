@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getData</title>
+    <script>
+        function getData() {
+          let iframe = document.getElementById('proxy');
+          iframe.onload = function () {
+            let data = iframe.contentWindow.name;
+            console.log(data)
+          }
+          iframe.src='./b.html';
+        }
+    </script>
+</head>
+<body>
+    <iframe src="http://localhost:1111/windowName.html" frameborder="0" id="proxy" style="display: none" onload="getData()"></iframe>
+</body>
+</html>
