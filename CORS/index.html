@@ -8,8 +8,16 @@
 <body>
 <script>
   $(document).ready(function(){
-    let htmlobj=$.ajax({url:"http://localhost:1111/cors",async:false});
-    console.log(htmlobj.responseText)
+    $.ajax({
+      url:"http://localhost:1111/cors",
+      xhrFields:{
+        withCredentials:true
+      },
+      success:function(data){
+        console.log('ajaxdata',data)
+      }
+    })
+
   });
 </script>
 </body>

@@ -18,7 +18,10 @@ IE6、7不支持
 
 CORS:跨端资源共享：后端通过'Access-Control-Allow-Origin'设置
 主要需要浏览器和服务器同时支持，浏览器将CORS请求分为简单请求和非简单请求，简单请求需要在头信息中增加一个Origin字段，非简单请求会在通信前增加HTTP查询，询问服务器网页所在域名是否在服务器许可名单中，以及可使用的HTTP动词和头信息字段，得到肯定答复后浏览器才会发出正式的XMLHttpRequest
-请求方法为HEAD、GET、POST，头信息不超出Accept、Accept-Language、Content-Language、Last-Event-ID、Content-Type(application/x-www-form-urlencoded、multipart/form-data、text/plain)即为简单请求。对于普通跨域请求，只需后端设置，前段无需设置
+请求方法为HEAD、GET、POST，头信息不超出Accept、Accept-Language、Content-Language、Last-Event-ID、Content-Type(application/x-www-form-urlencoded、multipart/form-data、text/plain)即为简单请求。对于普通跨域请求，只需后端设置，前端无需设置
+跨域实现cookie传递数据，服务器端指定Access-Control-Allow-Credentials: true（Access-Control-Allow-Origin不能设置为*），ajax请求中需要打开withCredentials属性：
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
 nginx代理：nginx配置，原理：同源策略是浏览器的，不是HTTP协议，服务端不存在跨域问题。
 js、css、img可以跨域，icon不可以。在nginx静态资源服务器中配置'add_header Access-Control-Allow-Origin *'可实现iconfont字体文件跨域
@@ -40,6 +43,8 @@ window.postMessage:访问windowPostMessage/index.html能看到server中windowPos
 cors:访问cors/index.html能看到http://localhost:1111/cors 返回的数据
 node.js:初次执行npm run vue，否则执行npm run vueopen,访问localhost:8080 能看到调用http://localhost:1111/api/user接口
 
+
+图片跨域问题：canvas.toDataURL会遇到，img标签添加 crossorigin="anonymous"属性，核心是请求头中包含了 Origin: "anonymous"或"*" 字段，响应头中就会附加上 Access-Control-Allow-Origin: * 字段，问题解决
 
 
 

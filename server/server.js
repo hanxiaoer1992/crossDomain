@@ -52,8 +52,9 @@ let server = http.createServer((req, res) => {
     }
     res.writeHead(200, {
       'Access-Control-Allow-Credentials': 'true',     // 后端允许发送Cookie
-      'Access-Control-Allow-Origin': '*',    // 允许访问的域（协议+域名+端口）
-      'Set-Cookie': 'l=a123456;Path=/;Domain=www.domain2.com;HttpOnly'   // HttpOnly:脚本无法读取cookie
+      'Access-Control-Allow-Origin': 'http://localhost:63342',    // 允许访问的域（协议+域名+端口）
+      'Set-Cookie': 'l=a123456;Path=/;Domain=localhost:1111;',
+      'Access-Control-Allow-Credentials': 'true'
     });
     res.write(JSON.stringify(result));
     res.end();
