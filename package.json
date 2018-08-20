@@ -12,6 +12,7 @@
   "author": "wangyanan",
   "license": "ISC",
   "dependencies": {
+    "rmc-dialog": "^1.1.1",
     "vue": "^2.5.16",
     "vue-cli": "^2.9.6",
     "webpack": "^4.16.3"
