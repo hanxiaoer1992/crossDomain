@@ -5,9 +5,9 @@
     <title>window.postMessage getdata</title>
     <script>
       function onLoad() {
-        let iframe = document.getElementById('iframe');
-        let win = iframe.contentWindow;
-        win.postMessage('this type can only be a string','*');//第二个参数为可接受消息的所在域
+        let iframe = document.getElementById('iframe')
+        let win = iframe.contentWindow
+        win.postMessage('this type can only be a string', '*')//第二个参数为可接受消息的所在域
       }
     </script>
 </head>

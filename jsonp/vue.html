@@ -16,14 +16,14 @@
     el: '#app',
     data: {
       message: '123',
-      url:'http://localhost:1111/vuejsonp'
+      url: 'http://localhost:1111/vuejsonp'
     },
-    ready: function() {
+    ready: function () {
       this.getCustomers()
     },
     methods: {
-      getCustomers: function() {
-        this.$http.jsonp(this.url,{id:1}).then(function(response){
+      getCustomers: function () {
+        this.$http.jsonp(this.url, {id: 1}).then(function (response) {
           this.message = response.data.name
           console.log(response)
         })
